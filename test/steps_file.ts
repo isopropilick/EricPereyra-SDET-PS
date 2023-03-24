@@ -1,22 +1,10 @@
-const { actor } = require('codeceptjs');
-const faker = require('faker');
-import ex from 'codeceptjs-expectwrapper';
-const FormData = require('form-data');
+// in this file you can append custom step methods to 'I' object
 
-export = function () {
-    return actor({
-        async createNewUser(userData:object) {
-            let payload = userData || {
-                name: faker.name.firstName(),
-                job: 'leader'
-            };
+module.exports = function() {
+  return actor({
 
-            return this.sendPostRequest('/api/users', payload);
-        }, 
-        createFormData(key, value) {
-            let form = new FormData();
-            form.append(key, value);
-            return form;
-        }
-    , ...ex});
+    // Define custom steps here, use 'this' to access default methods of I.
+    // It is recommended to place a general 'login' function here.
+
+  });
 }

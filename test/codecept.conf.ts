@@ -1,35 +1,28 @@
+import { setHeadlessWhen, setCommonPlugins } from '@codeceptjs/configure';
+// turn on headless mode when running with HEADLESS=true environment variable
+// export HEADLESS=true && npx codeceptjs run
+setHeadlessWhen(process.env.HEADLESS);
+
+// enable all common plugins https://github.com/codeceptjs/configure#setcommonplugins
+setCommonPlugins();
+
 export const config: CodeceptJS.MainConfig = {
-  tests: './*/*Cases.ts',
+  tests: './*_test.ts',
   output: './output',
   helpers: {
     REST: {
-      endpoint: 'https://reqres.in'
+      endpoint: 'http://localhost:8080/'
     },
-    JSONResponse: {},
-    ApiDataFactory: {
-      endpoint: "https://reqres.in",
-      cleanup: false,
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      },
-      factories: {
-        user: {
-          factory: "./factories/user",
-          create: (data) => ({ method: 'POST',  url: '/api/users', data })
-        },
-      }
-   }
+    JSONResponse: {}
   },
   include: {
-    I: './steps_file.ts'
+    I: './steps_file'
   },
-  name: 'codeceptjs-rest-demo',
-  plugins: {
-    allure: {
-      enabled: true,
-      outputDir: 'report',
-      require: '@codeceptjs/allure-legacy',
-    }
-  }
+  gherkin: {
+    features: './features/*.feature',
+    steps: [
+      './step_definitions/steps.js',
+    ],
+  },
+  name: 'test'
 }
