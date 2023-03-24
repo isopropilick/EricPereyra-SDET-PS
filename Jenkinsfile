@@ -5,8 +5,8 @@ pipeline {
             steps {
                 sh "rm -f -R allure-results"
                 sh "mkdir allure-results"
-                sh "sudo apt install git -y" 
-                sh "sudo apt install nodejs npm -y"
+                sh "apt install git -y" 
+                sh "apt install nodejs npm -y"
                 sh 'npm install'
                 sh 'npm test'
                 }
