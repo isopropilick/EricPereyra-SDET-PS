@@ -4,17 +4,19 @@
 
 ## Feedback
 ### Assumptions
-- Los comandos deberian ejecutarse en orden.
-- No es posible ejecutar instrucciones no reconocidas, esto deberia generar un error 400.
- -----
-Apreciaran el apartado de CI/CD, Implementacion de caasos parametrizables y la variedad de funciones utilizadas.
+- Commands should be executed in order.
+- It is not possible to execute unrecognized instructions, this should generate a 400 error.
+
+You will appreciate the section on CI/CD, Implementation of parameterizable cases and the variety of functions used.
+
+:)
 ### Detected Issues
 
- - La implementacion de la API no cuenta con respuestas consistentes. (se sospecha de algun tipo de cache)
- - Parece que las instrucciones no se ejecutan precisamente en orden.
- - El conteo de zonas con tierra es inconsistente, especialmente cuando existen instrucciones iguales consecutivas.
- - La Roomba no deberia poderse colocar fuera del cuarto.
- - Es posible ejecutar comandos invalidos por ejemplo "NSNEXW"
+- The implementation of the API does not have consistent responses. (some kind of cache is suspected)
+- It seems that the instructions are not executed precisely in order.
+- The count of zones with land is inconsistent, especially when there are consecutive equal instructions.
+- The Roomba should not be able to be placed outside the room.
+- It is possible to execute invalid commands for example "NSNEXW"
 ## Running Tests
 
 To run tests, run the following commands: (for MacOS and Linux)
@@ -29,7 +31,7 @@ npm test
 
 
 ## CI/CD & reporte
-Implemente un proceso de CI/CD usando una instancia local de docker, una instalacion local de jenkins y para el reporte utilice AllureJS. Anexo algunas screenshots:
+I implemented a CI/CD process using a local docker instance, a local jenkins installation and for the report I used AllureJS. Annex some screenshots:
 ![App Screenshot](https://github.com/isopropilick/EricPereyra-SDET-PS/raw/develop/Screenshots/CICD-1.png)
 ![App Screenshot](https://github.com/isopropilick/EricPereyra-SDET-PS/raw/develop/Screenshots/CICD-2.png)
 ![App Screenshot](https://github.com/isopropilick/EricPereyra-SDET-PS/raw/develop/Screenshots/CICD-3.png)
