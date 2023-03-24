@@ -22,18 +22,18 @@ pipeline {
                 }
             }
         }
-        stage('Process build') {
-            steps {
-                dir('test/') {
-                    script{
-                        allure([
-                            includeProperties: false,
-                            jdk: '',
-                            properties: [],
-                            reportBuildPolicy: 'ALWAYS',
-                            results: [[path: 'output']]
-                        ])
-                    }
+    }
+    post {
+        always {
+            dir('test/') {
+                script{
+                    allure([
+                        includeProperties: false,
+                        jdk: '',
+                        properties: [],
+                        reportBuildPolicy: 'ALWAYS',
+                        results: [[path: 'output']]
+                    ])
                 }
             }
         }
