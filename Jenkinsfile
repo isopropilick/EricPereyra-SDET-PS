@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    triggers {
-        cron('*/15 * * * *')
-    }
     stages {
         stage('pre-flight'){
             steps{
