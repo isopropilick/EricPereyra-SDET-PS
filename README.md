@@ -14,7 +14,7 @@ You will appreciate the section on CI/CD, Implementation of parameterizable case
 
 - The implementation of the API does not have consistent responses. (some kind of cache is suspected)
 - It seems that the instructions are not executed precisely in order.
-- The count of zones with land is inconsistent, especially when there are consecutive equal instructions.
+- The count of dirt patches is inconsistent, especially when there are consecutive equal instructions.
 - The Roomba should not be able to be placed outside the room.
 - It is possible to execute invalid commands for example "NSNEXW"
 ## Running Tests
