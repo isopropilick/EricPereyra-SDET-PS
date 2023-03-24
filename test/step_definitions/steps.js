@@ -1,4 +1,5 @@
 /* eslint-disable */
+//const {Given} = require("cucumber");
 let request_payload = {};
 let response = {};
 const I = actor();
@@ -35,4 +36,16 @@ Then(/^The total cleaned patches of dirt are ([^"]*)$/, function (cpatches) {
     I.seeResponseContainsJson(
         {"patches":Number(cpatches)}
     )
+});
+Given(/^There are (\d+) patches of dirt in the room, distributed randomly$/, function (n) {
+    let maxX = request_payload.roomSize[0], maxY = request_payload.roomSize[1], rpatch = [], i = 0;
+    for (; i < n; i++) {
+        let xVal = Math.floor(Math.random() * maxX);
+        let yVal = Math.floor(Math.random() * maxY);
+        rpatch.push([xVal, yVal]);
+    }
+    request_payload.patches = rpatch;
+});
+Given(/^There are no patches of dirt in the room$/, function () {
+    request_payload.patches = [];
 });
