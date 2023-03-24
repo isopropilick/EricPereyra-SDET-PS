@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'node:119' }
+    }
     stages {
         stage('API test'){
             steps {
