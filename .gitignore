@@ -1,0 +1,7 @@
+/test/report/
+/test/allure-report/
+/test/node_modules/
+/test/.idea/
+.DS_Store
+
+.idea/
