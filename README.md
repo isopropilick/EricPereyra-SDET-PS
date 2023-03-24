@@ -32,12 +32,12 @@ npm test
 
 ## CI/CD & reporte
 I implemented a CI/CD process using a local docker instance, a local jenkins installation and for the report I used AllureJS. Annex some screenshots:
-![App Screenshot](https://github.com/isopropilick/EricPereyra-SDET-PS/raw/develop/Screenshots/CICD-1.png)
-![App Screenshot](https://github.com/isopropilick/EricPereyra-SDET-PS/raw/develop/Screenshots/CICD-2.png)
-![App Screenshot](https://github.com/isopropilick/EricPereyra-SDET-PS/raw/develop/Screenshots/CICD-3.png)
-![App Screenshot](https://github.com/isopropilick/EricPereyra-SDET-PS/raw/develop/Screenshots/CICD-4.png)
-![App Screenshot](https://github.com/isopropilick/EricPereyra-SDET-PS/raw/develop/Screenshots/CICD-5.png)
-![App Screenshot](https://github.com/isopropilick/EricPereyra-SDET-PS/raw/develop/Screenshots/CICD-6.png)
-![App Screenshot](https://github.com/isopropilick/EricPereyra-SDET-PS/raw/develop/Screenshots/CICD-7.png)
-![App Screenshot](https://github.com/isopropilick/EricPereyra-SDET-PS/raw/develop/Screenshots/CICD-8.png)
+![App Screenshot](https://github.com/isopropilick/EricPereyra-SDET-PS/raw/master/Screenshots/CICD-1.png)
+![App Screenshot](https://github.com/isopropilick/EricPereyra-SDET-PS/raw/master/Screenshots/CICD-2.png)
+![App Screenshot](https://github.com/isopropilick/EricPereyra-SDET-PS/raw/master/Screenshots/CICD-3.png)
+![App Screenshot](https://github.com/isopropilick/EricPereyra-SDET-PS/raw/master/Screenshots/CICD-4.png)
+![App Screenshot](https://github.com/isopropilick/EricPereyra-SDET-PS/raw/master/Screenshots/CICD-5.png)
+![App Screenshot](https://github.com/isopropilick/EricPereyra-SDET-PS/raw/master/Screenshots/CICD-6.png)
+![App Screenshot](https://github.com/isopropilick/EricPereyra-SDET-PS/raw/master/Screenshots/CICD-7.png)
+![App Screenshot](https://github.com/isopropilick/EricPereyra-SDET-PS/raw/master/Screenshots/CICD-8.png)
 
