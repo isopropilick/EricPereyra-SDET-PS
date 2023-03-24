@@ -24,5 +24,11 @@ export const config: CodeceptJS.MainConfig = {
       './step_definitions/steps.js',
     ],
   },
+  plugins: {
+    allure: {
+      enabled: true,
+      require: '@codeceptjs/allure-legacy',
+    }
+  },
   name: 'test'
 }

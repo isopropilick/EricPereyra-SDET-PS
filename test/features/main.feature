@@ -1,7 +1,4 @@
-Feature: Business rules
-  In order to achieve my goals
-  As a persona
-  I want to be able to interact with a system
+Feature: API Testing
 
   Scenario Outline: Happy Path
     Given I have a room that has a dimension of <room>$
