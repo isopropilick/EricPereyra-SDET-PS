@@ -1,36 +1,39 @@
 pipeline {
     agent any
     stages {
-        stage('API test'){
+        stage('pre-flight'){
+            steps{
+                sh "apt update "
+                sh "apt-get --yes install nodejs npm"
+            }
+        }
+        stage('Run service'){
             steps {
-                sh "rm -f -R allure-results"
-                sh "mkdir allure-results"
-                sh "apt install git -y" 
-                sh "apt install nodejs npm -y"
-                sh 'npm install'
-                sh 'npm test'
+                dir('service/') {
+                    sh "nohup java -Dproperties.location=application.properties -Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=4000,suspend=n -jar sdet-assignment-service-0.0.1-SNAPSHOT.jar &"
                 }
             }
+        }
+        stage('API test'){
+            steps{
+                dir('test/') {
+                    sh 'npm install'
+                    sh 'npm test'
+                }
+            }
+        }
         stage('Process build') {
             steps {
-                script{
-                    def  FILES_LIST = sh (script: "ls allure-results/", returnStdout: true).trim()
-                    echo "FILES_LIST : ${FILES_LIST}"
-                    def parsedfiles = FILES_LIST.split(" ")
-                    echo "${parsedfiles}"
-                    if ("${env.CAUSE}".contains("Triggered by job")){
-                        def data = readJSON file:'dummy.json'
-                        def quit = httpRequest url:"${returnurl}", httpMode: 'POST', contentType: 'TEXT_PLAIN', requestBody:"${data}"
-                    }else{
-                        println("Local execution")
+                dir('test/') {
+                    script{
+                        allure([
+                            includeProperties: false,
+                            jdk: '',
+                            properties: [],
+                            reportBuildPolicy: 'ALWAYS',
+                            results: [[path: 'output']]
+                        ])
                     }
-                    allure([
-                        includeProperties: false,
-                        jdk: '',
-                        properties: [],
-                        reportBuildPolicy: 'ALWAYS',
-                        results: [[path: 'allure-results']]
-                    ])
                 }
             }
         }
