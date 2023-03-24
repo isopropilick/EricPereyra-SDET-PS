@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    triggers {
+        cron('*/15 * * * *')
+    }
     stages {
         stage('pre-flight'){
             steps{
@@ -22,18 +25,18 @@ pipeline {
                 }
             }
         }
-        stage('Process build') {
-            steps {
-                dir('test/') {
-                    script{
-                        allure([
-                            includeProperties: false,
-                            jdk: '',
-                            properties: [],
-                            reportBuildPolicy: 'ALWAYS',
-                            results: [[path: 'output']]
-                        ])
-                    }
+    }
+    post {
+        always {
+            dir('test/') {
+                script{
+                    allure([
+                        includeProperties: false,
+                        jdk: '',
+                        properties: [],
+                        reportBuildPolicy: 'ALWAYS',
+                        results: [[path: 'output']]
+                    ])
                 }
             }
         }

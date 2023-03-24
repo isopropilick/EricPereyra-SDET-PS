@@ -1,14 +1,14 @@
 Feature: API Testing
 
   Scenario Outline: Happy Path
-    Given I have a room that has a dimension of <room>$
-    And I have a roomba in the following coordinates: <pos>$
-    And There are patches of dirt in the following coordinates: <patches>$
-    Then I send the command to the roomba to perform the following actions: <command>$
+    Given I have a room that has a dimension of <room>
+    And I have a roomba in the following coordinates: <pos>
+    And There are patches of dirt in the following coordinates: <patches>
+    Then I send the command to the roomba to perform the following actions: <command>
     Then I got the response from the roomba
-    And The response code is <rcode>$
-    And The position now is <fpos>$
-    And The total cleaned patches of dirt are <cpatches>$
+    And The response code is <rcode>
+    And The position now is <fpos>
+    And The total cleaned patches of dirt are <cpatches>
 
     Examples:
       | pos   | room    | patches                           | command       | rcode | fpos    | cpatches  |
