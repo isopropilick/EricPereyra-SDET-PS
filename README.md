@@ -11,7 +11,7 @@ You will appreciate the section on CI/CD, Implementation of parameterizable case
 
 :)
 ### Detected Issues
-
+sws
 - The implementation of the API does not have consistent responses. (some kind of cache is suspected)
 - It seems that the instructions are not executed precisely in order.
 - The count of dirt patches is inconsistent, especially when there are consecutive equal instructions.
